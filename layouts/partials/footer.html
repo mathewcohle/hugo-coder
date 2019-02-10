@@ -3,6 +3,9 @@
     {{ with .Site.Params.footercontent | safeHTML }}
       <p>{{.}}</p>
     {{ end }}
+    {{ with .Site.Params.gpgfingerprint }}
+      <p><a href="/mc-public-key.asc"><code>{{.}}</code></a></p>
+    {{ end }}
     {{ if not .Site.Params.hideCopyright }} © {{ now.Format "2006" }}{{ end }}
     {{ if not .Site.Params.hideCredits }}
       {{ if not .Site.Params.hideCopyright }} · {{ end }}
